@@ -86,7 +86,7 @@ export default class PluginSample extends Plugin {
                 callback: () => {
                     // Return data and save it in real time
                     let value = this.settingUtils.takeAndSave("exception");
-                    console.log(value);
+                    //console.log(value);
                 }
             }
         });
@@ -187,12 +187,12 @@ export default class PluginSample extends Plugin {
         // 3. 获取所有标签页
         const tabs = document.querySelectorAll('li[data-type="tab-header"]');
         console.log("当前打开的标签页数量:", tabs.length);
-        console.log("当前打开的标签页具体信息:", tabs);
+        //console.log("当前打开的标签页具体信息:", tabs);
 
         // 4. 收集所有标签的 data-id 和初始计数 1
         tabs.forEach((tab) => {
             const dataId = tab.getAttribute('data-id');
-            console.log("当前dataId:", dataId);
+            //console.log("当前dataId:", dataId);
 
             // 检查是否包含 item--pin 或 item--focus 类
             if (tab.classList.contains('item--pin') || tab.classList.contains('item--focus')) {
@@ -267,11 +267,11 @@ export default class PluginSample extends Plugin {
             if (tabInfoEntry && tabInfoEntry.count >= stayOpenMinutes) { // 如果 count 大于等于 stayOpenMinutes
                 // 找到并点击关闭按钮
                 const closeButton = tabElement.querySelector('.item__close');
-                console.log({
-                    tabElement: tabElement,
-                    tabInfoEntry: tabInfoEntry,
-                    closeButton: closeButton
-                }); // 同时输出三个变量的值
+                //console.log({
+                //    tabElement: tabElement,
+                //    tabInfoEntry: tabInfoEntry,
+                //    closeButton: closeButton
+                //}); // 同时输出三个变量的值
                 if (closeButton) {
                     console.log("执行点击");
                     (closeButton as HTMLElement).click();
