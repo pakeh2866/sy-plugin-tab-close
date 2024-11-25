@@ -136,7 +136,7 @@ export default class PluginSample extends Plugin {
     // 插件卸载时执行
     async onunload() {
         console.log(this.i18n.byePlugin);
-        showMessage("Goodbye SiYuan Plugin");
+        showMessage("Goodbye Plugin");
         console.log("onunload，卸载");
         // 清除定时器
         if (this.checkInterval) {
