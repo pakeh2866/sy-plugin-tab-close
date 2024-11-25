@@ -21,7 +21,7 @@
   },
   "description": {
     "en_US": "Automatically close inactive tabs to keep your workspace clean and save resources. Closed tabs can be easily restored.",
-    "zh_CN": "自动关闭不活跃的标签页，保持工作区整洁并节省资源。被关闭的标签页可以轻松恢复。"
+    "zh_CN": "自动关闭不活跃的标签页，保持工作区整洁并节省资源。"
   },
   "readme": {
     "en_US": "README.md",
