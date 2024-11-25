@@ -85,6 +85,23 @@ export default class PluginSample extends Plugin {
             }
         });
 
+        // 添加是否排除今日日期
+        this.settingUtils.addItem({
+            key: "Check_DN",
+            value: true,
+            type: "checkbox",
+            title: "是否排除今日Dailynote",
+            description: "开启后，今日Dailynote不会关闭",
+            action: {
+                callback: () => {
+                    // Return data and save it in real time
+                    let value = !this.settingUtils.get("Check_DN");
+                    this.settingUtils.set("Check_DN", value);
+                    console.log("Check_DN",value);
+                }
+            }
+        });
+
         // 加载设置
         try {
             this.settingUtils.load();
