@@ -214,6 +214,15 @@ export default class PluginSample extends Plugin {
         // 读取 exception 的值并以 | 分割
         const exceptions = this.settingUtils.get("exception").split('|').map(item => item.trim());
         console.log("不关闭的标签页字符串:", exceptions);
+
+        // 获取今日日期
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+
+        const formattedToday = `${year}-${month}-${day}`;
+        console.log(formattedToday);
         
         // 6. 处理标签关闭
         tabs.forEach((tab: Element) => {
