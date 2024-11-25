@@ -1,7 +1,6 @@
 import {
     Plugin,
     showMessage,
-
     getFrontend,
     getBackend,
     IModel
@@ -38,7 +37,7 @@ export default class PluginSample extends Plugin {
         // 添加是否开启定时关闭页签功能设置项
         this.settingUtils.addItem({
             key: "Check",
-            value: true,
+            value: false,
             type: "checkbox",
             title: "是否开启定时关闭页签功能",
             description: "开启后，超过设置时间未活跃的页签将被自动关闭",
@@ -58,7 +57,7 @@ export default class PluginSample extends Plugin {
         // 添加自动关闭设置
         this.settingUtils.addItem({
             key: "stayOpen",
-            value: 30 , // 默认30分钟
+            value: 20, // 默认20s
             type: "slider",
             title: "不活跃时间阈值(秒)",
             description: "超过此时间的标签页将被自动关闭",
@@ -66,6 +65,13 @@ export default class PluginSample extends Plugin {
                 min: 5,
                 max: 600,
                 step: 5
+            },
+            action: {
+                callback: () => {
+                    // 当用户更改设置时，更新值
+                    let value = this.settingUtils.get("stayOpen");
+                    console.log("当前设置的 stayOpen 值:", value);
+                }
             }
         });
 
@@ -122,7 +128,8 @@ export default class PluginSample extends Plugin {
             "默认设置:\n" +
             this.settingUtils.get("stayOpen") + "\n" +
             this.settingUtils.get("exception") + "\n" +
-            this.settingUtils.get("Check") + "\n"
+            this.settingUtils.get("Check") + "\n"+
+            this.settingUtils.get("Check_DN") + "\n"
         );
     }
 
@@ -187,6 +194,12 @@ export default class PluginSample extends Plugin {
             const dataId = tab.getAttribute('data-id');
             console.log("当前dataId:", dataId);
 
+            // 检查是否包含 item--pin 或 item--focus 类
+            if (tab.classList.contains('item--pin') || tab.classList.contains('item--focus')) {
+                console.log("标签页被固定或聚焦，不计入 tabInfo:", tab);
+                return; // 不计入 tabInfo，直接返回
+            }
+
             if (dataId) {
                 const existingTab = this.tabInfo.find(item => item.dataId === dataId);
                 if (existingTab) {
@@ -212,18 +225,24 @@ export default class PluginSample extends Plugin {
         console.log("所有标签信息数组:", this.tabInfo);
         
         // 读取 exception 的值并以 | 分割
-        const exceptions = this.settingUtils.get("exception").split('|').map(item => item.trim());
-        console.log("不关闭的标签页字符串:", exceptions);
-
+        let exceptions = this.settingUtils.get("exception").split('|').map(item => item.trim());
+        
         // 获取今日日期
         const today = new Date();
         const year = today.getFullYear();
         const month = String(today.getMonth() + 1).padStart(2, '0');
         const day = String(today.getDate()).padStart(2, '0');
-
         const formattedToday = `${year}-${month}-${day}`;
-        console.log(formattedToday);
         
+        // 如果 Check_DN 为 true，将今日日期添加到不关闭列表中
+        const isCheckDN = this.settingUtils.get("Check_DN");
+        if (isCheckDN) {
+            exceptions.push(formattedToday);
+        }
+        
+        console.log("不关闭的标签页字符串:", exceptions);
+        console.log("今日日期:", formattedToday);
+
         // 6. 处理标签关闭
         tabs.forEach((tab: Element) => {
             const tabElement = tab as HTMLElement;
