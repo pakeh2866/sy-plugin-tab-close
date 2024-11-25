@@ -94,7 +94,6 @@ export default class PluginSample extends Plugin {
 
         console.log(this.i18n.helloPlugin);
 
-
     }
 
     // 布局加载完成时执行
@@ -126,15 +125,10 @@ export default class PluginSample extends Plugin {
         console.log("插件已卸载");
     }
 
-
-
-
     // 事件总线日志
     private eventBusLog({ detail }: any) {
         console.log(detail);
     }
-
-
 
     private initAutoClose() {
         console.log("初始化自动关闭功能");
@@ -179,8 +173,8 @@ export default class PluginSample extends Plugin {
             if (dataId) {
                 const existingTab = this.tabInfo.find(item => item.dataId === dataId);
                 if (existingTab) {
-                    // 如果已存在，计数加1
-                    existingTab.count += 1;
+                    // 如果已存在，计数加5
+                    existingTab.count += 5;
                     console.log(`标签 ${dataId} 重复出现，当前计数: ${existingTab.count}`);
                 } else {
                     // 如果不存在，添加新记录，初始计数为1
@@ -225,7 +219,7 @@ export default class PluginSample extends Plugin {
                 return; // 不关闭，直接返回
             }
 
-            if (tabInfoEntry && tabInfoEntry.count >= 5) { // 如果 count 大于等于 5
+            if (tabInfoEntry && tabInfoEntry.count >= stayOpenMinutes) { // 如果 count 大于等于 stayOpenMinutes
                 // 找到并点击关闭按钮
                 const closeButton = tabElement.querySelector('.item__close');
                 console.log({
