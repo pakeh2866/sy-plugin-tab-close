@@ -63,9 +63,9 @@ export default class PluginSample extends Plugin {
             title: "不活跃时间阈值(秒)",
             description: "超过此时间的标签页将被自动关闭",
             slider: {
-                min: 1,
-                max: 120,
-                step: 1
+                min: 5,
+                max: 600,
+                step: 5
             }
         });
 
