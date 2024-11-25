@@ -1,0 +1,43 @@
+{
+  "name": "siyuan-tab-manager",
+  "author": "pakeh",
+  "url": "https://github.com/pakeh2866/siyuan-tab-manager",
+  "version": "0.1.0",
+  "minAppVersion": "3.0.12",
+  "backends": [
+    "windows",
+    "linux",
+    "darwin",
+    "docker"
+  ],
+  "frontends": [
+    "desktop",
+    "browser-desktop",
+    "desktop-window"
+  ],
+  "displayName": {
+    "en_US": "Tab Manager",
+    "zh_CN": "标签页定时关闭"
+  },
+  "description": {
+    "en_US": "Automatically close inactive tabs to keep your workspace clean and save resources. Closed tabs can be easily restored.",
+    "zh_CN": "自动关闭不活跃的标签页，保持工作区整洁并节省资源。被关闭的标签页可以轻松恢复。"
+  },
+  "readme": {
+    "en_US": "README.md",
+    "zh_CN": "README_zh_CN.md"
+  },
+  "funding": {
+    "custom": [
+      ""
+    ]
+  },
+  "keywords": [
+    "tab",
+    "manager",
+    "productivity",
+    "标签页",
+    "管理器",
+    "效率"
+  ]
+}
