@@ -23,7 +23,7 @@
 ### 反馈问题，赞赏
 
 - [反馈问题](https://github.com/siyuan-note/siyuan-tab-manager/issues)
-- <img src="https://cdn.jsdelivr.net/gh/pakeh2866/img-picgo@main/pest-20241125115241-0km2h1n.jpg" alt="wechat" style="width:280px;height:375px;" />
+- <img src="https://cdn.jsdelivr.net/gh/pakeh2866/img-picgo@main/pest-20241125115241-0km2h1n.jpg" alt="wechat" style="width:300px;height:325px;" />
 
 
 
