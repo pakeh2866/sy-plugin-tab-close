@@ -40,7 +40,7 @@ export default class PluginSample extends Plugin {
             value: false,
             type: "checkbox",
             title: "是否开启定时关闭页签功能",
-            description: "开启后，超过设置时间未活跃的页签将被自动关闭",
+            description: "开启后，超过设置时间未活跃的页签将被自动关闭(右下角一定记得保存设置)",
             action: {
                 callback: () => {
                     // Return data and save it in real time
