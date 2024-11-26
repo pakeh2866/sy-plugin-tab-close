@@ -21,5 +21,5 @@ After the first activation, please configure the automatic closing interval acco
 
 ### Feedback and Support
 
-- [Report Issues](https://github.com/siyuan-note/siyuan-tab-manager/issues)
-- <img src="https://cdn.jsdelivr.net/gh/pakeh2866/img-picgo@main/pest-20241125115241-0km2h1n.jpg" alt="wechat" style="width:310px;height:275px;" />
+- [Feedback](https://github.com/pakeh2866/siyuan-tab-manager/issues)
+- <img src="https://cdn.sa.net/2024/11/26/dKQcusaXbf9OJSV.png" alt="wechat" style="width:300px;height:325px;" />
