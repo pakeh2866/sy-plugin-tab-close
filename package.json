@@ -1,10 +1,10 @@
 {
-  "name": "tab-auto-closer",
+  "name": "sy-plugin-tab-close",
   "version": "0.1.0",
   "type": "module",
   "description": "一个思源笔记插件，用于自动关闭长时间未使用的浏览器标签页。帮助你保持整洁的浏览环境，节省系统资源，同时提供便捷的标签页恢复功能。",
-  "repository": "https://github.com/pakeh2866/siyuan-tab-manager",
-  "homepage": "https://github.com/pakeh2866/siyuan-tab-manager",
+  "repository": "https://github.com/pakeh2866/sy-plugin-tab-close",
+  "homepage": "https://github.com/pakeh2866/sy-plugin-tab-close",
   "author": "pakeh2866",
   "license": "MIT",
   "scripts": {

@@ -1,5 +1,5 @@
 
-# siyuan-tab-manager - 标签页定时关闭插件
+# sy-plugin-tab-close - 标签页定时关闭插件
 
 [English](./README.md)
 
@@ -22,7 +22,7 @@
 
 ### 反馈问题，赞赏
 
-- [反馈问题](https://github.com/pakeh2866/siyuan-tab-manager/issues)
+- [反馈问题](https://github.com/pakeh2866/sy-plugin-tab-close/issues)
 - <img src="https://cdn.sa.net/2024/11/26/dKQcusaXbf9OJSV.png" alt="wechat" style="width:300px;height:325px;" />
 
 
