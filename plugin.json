@@ -2,7 +2,7 @@
   "name": "sy-plugin-tab-close",
   "author": "pakeh",
   "url": "https://github.com/pakeh2866/sy-plugin-tab-close",
-  "version": "v0.4.3",
+  "version": "v0.4.4",
   "minAppVersion": "3.0.12",
   "backends": [
     "windows",
