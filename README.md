@@ -17,7 +17,7 @@ After the first activation, please configure the automatic closing interval acco
 
 ### Recent Updates
 
-- 2024-11-25: Version 0.1
+- 2024-12-01：修复BUG
 
 ### Feedback and Support
 

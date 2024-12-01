@@ -1,6 +1,6 @@
 {
   "name": "sy-plugin-tab-close",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "type": "module",
   "description": "一个思源笔记插件，用于自动关闭长时间未使用的浏览器标签页。帮助你保持整洁的浏览环境，节省系统资源，同时提供便捷的标签页恢复功能。",
   "repository": "https://github.com/pakeh2866/sy-plugin-tab-close",

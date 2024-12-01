@@ -10,8 +10,6 @@ import "@/index.scss";
 
 import { SettingUtils } from "./libs/setting-utils";
 const STORAGE_NAME = "menu-config";
-const TAB_TYPE = "custom_tab";
-const DOCK_TYPE = "dock_tab";
 
 export default class PluginSample extends Plugin {
 
@@ -259,9 +257,11 @@ export default class PluginSample extends Plugin {
 
             // 检查 item__text 是否包含在 exceptions 中
             const itemText = tabElement.querySelector('.item__text')?.textContent || '';
-            if (exceptions.some(exception => itemText.includes(exception))) {
-                console.log("标签页包含在不关闭列表中:", itemText);
-                return; // 不关闭，直接返回
+            if (exceptions && exceptions.length > 0) {  // 添加非空检查
+                if (exceptions.some(exception => exception && itemText.includes(exception))) {
+                    console.log("标签页包含在不关闭列表中:", itemText);
+                    return; // 不关闭，直接返回
+                }
             }
 
             if (tabInfoEntry && tabInfoEntry.count >= stayOpenMinutes) { // 如果 count 大于等于 stayOpenMinutes
