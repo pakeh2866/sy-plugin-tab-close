@@ -55,19 +55,14 @@ export default class PluginSample extends Plugin {
         // 添加自动关闭设置
         this.settingUtils.addItem({
             key: "stayOpen",
-            value: 20, // 默认20s
-            type: "slider",
+            value: "20", // 默认20s
+            type: "textinput",
             title: "不活跃时间阈值(秒)",
-            description: "超过此时间的标签页将被自动关闭",
-            slider: {
-                min: 5,
-                max: 600,
-                step: 5
-            },
+            description: "超过此时间的标签页将被自动关闭，保存后生效",
             action: {
                 callback: () => {
                     // 当用户更改设置时，更新值
-                    let value = this.settingUtils.get("stayOpen");
+                    let value = this.settingUtils.takeAndSave("stayOpen");
                     console.log("当前设置的 stayOpen 值:", value);
                 }
             }
@@ -171,7 +166,7 @@ export default class PluginSample extends Plugin {
 
     private async checkToClose() {
         // 1. 计算时间阈值
-        const stayOpenMinutes = this.settingUtils.get("stayOpen");    // 获取设置的保持打开时间
+        const stayOpenMinutes = parseInt(this.settingUtils.get("stayOpen")) || 20;    // 获取设置的保持打开时间，如果解析失败则使用默认值20
         console.log("保持打开时间:", stayOpenMinutes);
 
         // 2. 初始化计数和存储
